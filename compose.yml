@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  ssqueuetriggeredapp:
+    image: us-east1-docker.pkg.dev/lesser/lesser-repository/queue_triggered_app:latest
+    network_mode: host
+
+  facenet:
+    image: us-east1-docker.pkg.dev/lesser/lesser-repository/facenet:latest
+    ports:
+      - "8080:8080"
+
+  facerec:
+    image: us-east1-docker.pkg.dev/lesser/lesser-repository/facerec:latest
+    ports:
+      - "8081:8081"
+
+  classifyfacerelevance:
+    image: us-east1-docker.pkg.dev/lesser/lesser-repository/classify-faces-relevance:latest
+    ports:
+      - "8082:8082"
+      
+# networks:
+#   my-network:
+#     driver: bridge

@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  ssqueuetriggeredapp:
+    image: ssqueuetriggeredapp:latest
+    network_mode: host
+
+  facenet:
+    image: facenet:latest
+    ports:
+      - "8080:8080"
+
+  facerec:
+    image: facerec:latest
+    ports:
+      - "8081:8081"
+
+  classifyfacerelevance:
+    image: classifyfacerelevance:latest
+    ports:
+      - "8082:8082"
+      
+# networks:
+#   my-network:
+#     driver: bridge
